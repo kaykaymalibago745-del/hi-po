@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Login</title>
+    
+</head>
+<body>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Courier New", monospace;
+
+    /* Minecraft dirt background */
+    background-color: #ebe3e0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: #4caf50;
+    border-bottom: 8px solid #470e04;
+}
+
+.create-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+
+    background: #c6c6c6;
+
+    border: 5px solid #555;
+
+    box-shadow:
+        inset 4px 4px #ffffff,
+        inset -4px -4px #333,
+        8px 8px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+
+    background: #3f3f3f;
+    color: white;
+
+    padding: 15px;
+    margin-bottom: 25px;
+
+    font-family: "Courier New", monospace;
+    font-size: 28px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    border: 4px solid #222;
+
+    text-shadow: 3px 3px #111;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    color: #222;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    height: 42px;
+
+    padding: 10px;
+
+    background: white;
+    color: #222;
+
+    border: 4px solid #555;
+
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #4caf50;
+}
+
+button {
+    width: 100%;
+    height: 48px;
+
+    margin-top: 10px;
+
+    background: #4caf50;
+    color: white;
+
+    border: 4px solid #2e6b1f;
+
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-shadow: 2px 2px #333;
+
+    box-shadow:
+        inset 3px 3px #75d34c,
+        inset -3px -3px #24551a;
+}
+
+button:hover {
+    background: #5fcf45;
+}
+
+button:active {
+    box-shadow:
+        inset -3px -3px #75d34c,
+        inset 3px 3px #24551a;
+}
+
+.login-message {
+    margin-top: 20px;
+    text-align: center;
+    color: #222;
+}
+
+.login-message a {
+    color: #1b5e20;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-message a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .create-container {
+        width: 92%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+</style>
+
+
+
+
+
+
+<section id="registerView" class="hidden">
+      <h1>CREATE ACCOUNT</h1>
+      <form id="registerForm">
+        <label for="registerUser">Username</label>
+        
+        <input id="registerUser" 
+        required minlength="3" 
+        maxlength="24" 
+        pattern="[A-Za-z0-9_]+" 
+        placeholder="Choose a username" />
+
+        <label for="registerEmail">Email</label>
+        <input id="registerEmail" type="email" required placeholder="you@example.com" />
+        <label for="registerPassword">Password</label>
+        <input id="registerPassword" type="password" required minlength="8" placeholder="At least 8 characters" />
+        <button type="submit">CREATE ACCOUNT</button>
+      </form>
+      <div id="registerMessage" class="message"></div>
+      Already have an account? 
+      <a href="hays.html" class="link" data-view="loginView">Log in</a>
+    </section>
+
+</body>
+</html>
